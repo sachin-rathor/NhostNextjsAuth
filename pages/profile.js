@@ -6,6 +6,8 @@ import Head from 'next/head';
 import Layout from '../components/Layout';
 import Input from '../components/Input';
 
+import withAuth from '../withAuth';
+
 const Profile = () => {
   const { user } = useUserContext();
 
@@ -77,4 +79,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default withAuth(Profile);
