@@ -5,6 +5,9 @@ import { useUserContext } from '../UserProvider';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, Transition } from '@headlessui/react';
+
+import { useSignOut } from '@nhost/nextjs';
+
 import {
   ChevronDownIcon,
   HomeIcon,
@@ -15,6 +18,8 @@ import Avatar from './Avatar';
 
 const Layout = ({ children = null }) => {
   const { user } = useUserContext();
+  
+  const { signOut } = useSignOut();
 
   const menuItems = [
     {
@@ -29,8 +34,8 @@ const Layout = ({ children = null }) => {
     },
     {
       label: 'Logout',
-      onClick: () => null,
-      icon: LogoutIcon,
+      onClick: signOut,
+      icon: LogoutIcon
     },
   ];
 
