@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
+      - run: npm install @nhost/react @nhost/nextjs graphql
+      - run: npm install @nhost/react-apollo @apollo/client
       - name: Build And Deploy
         env:
           ENABLE_PREVIEW_FEATURES: true
