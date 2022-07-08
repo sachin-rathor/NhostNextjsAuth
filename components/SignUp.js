@@ -20,7 +20,7 @@ const SignUp = () => {
   const { signUpEmailPassword, isLoading, isSuccess, needsEmailVerification, isError, error } =
     useSignUpEmailPassword()
 
-  const handleOnSubmit = e => {
+  const handleOnSubmit = async e => {
     e.preventDefault();
 	await signUpEmailPassword(email, password, {
       displayName: `${firstName} ${lastName}`.trim(),
